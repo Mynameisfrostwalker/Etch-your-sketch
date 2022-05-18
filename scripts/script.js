@@ -1,7 +1,8 @@
 const canvas = document.querySelector(".canvas");
 
-function addColour(color) {
-
+function addColour(e) {
+    e.target.style.backgroundColor = `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`
+     console.log(e.target.style)
 }
 
 function addGrid(num) {
@@ -11,7 +12,7 @@ function addGrid(num) {
         const grid = document.createElement("div");
         grid.classList.add("box");
         canvas.appendChild(grid);
-        grid.addEventListener("hover", addColour)
+        grid.addEventListener("mouseenter", addColour)
     }
 }
 
