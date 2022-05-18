@@ -1,6 +1,8 @@
 const canvas = document.querySelector(".canvas");
 const slider = document.querySelector(".slider-range");
 const sliderText = document.querySelector(".slider-text");
+const buttons = document.querySelectorAll("button");
+let color = "Rainbow"
 
 function changeSlider() {
     sliderText.textContent = slider.value;
@@ -14,8 +16,13 @@ function addSlider(num) {
 }
 
 function addColour(e) {
+    console.dir(e.target);
+    if(color === "Rainbow") {
     e.target.style.backgroundColor = `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`
-     console.log(e.target.style)
+    }
+    if(color === "Black") {
+        e.target.style.backgroundColor =  `rgb(0, 0, 0)`
+    }
 }
 
 function addGrid(num) {
@@ -36,6 +43,13 @@ function changeGrid(num) {
     addGrid(num)
 }
 
+function changeColor(e) {
+    color = e.target.textContent;
+}
+
+buttons.forEach(button => {
+    button.addEventListener("click", changeColor)
+})
 
 addGrid(16)
 addSlider(16)

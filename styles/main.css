@@ -57,12 +57,12 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 1rem;
 }
 
 .controls>p {
     font-size: 2rem;
     margin-top: 1rem;
-    margin-bottom: 1rem;
 } 
 
 .slider {
@@ -100,4 +100,46 @@ h1 {
 
 .box {
     border: 1px solid black;
+}
+
+button {
+    outline: none;
+    width: 7rem;
+    height: 2rem;
+    font-size: 1.5rem;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    outline: none;
+}
+
+.black {
+    color: white;
+    background-color: black;
+}
+
+.rainbow {
+    background-color: #F2AA4C;
+    animation: bcolour 10s ease-in-out infinite;
+    animation-fill-mode: forwards;
+}
+
+@keyframes bcolour {
+    20% {
+        background-color: #02e5f5;
+    }
+
+    40% {
+        background-color: #edf7f0;
+    }
+
+    60% {
+        background-color: #ff00e6;
+    }
+
+    80% {
+        background-color: #a6ff71;
+    }
 }
