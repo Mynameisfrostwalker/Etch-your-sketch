@@ -4,6 +4,7 @@ const sliderText = document.querySelector(".slider-text");
 
 function changeSlider() {
     sliderText.textContent = slider.value;
+    changeGrid(slider.value);
 } 
 
 function addSlider(num) {
@@ -26,7 +27,15 @@ function addGrid(num) {
         canvas.appendChild(grid);
         grid.addEventListener("mouseenter", addColour)
     }
-    addSlider(num)
 }
 
+function changeGrid(num) {
+    while(canvas.firstChild) {
+        canvas.removeChild(canvas.firstChild);
+    }
+    addGrid(num)
+}
+
+
 addGrid(16)
+addSlider(16)
