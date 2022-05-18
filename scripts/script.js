@@ -1,4 +1,16 @@
 const canvas = document.querySelector(".canvas");
+const slider = document.querySelector(".slider-range");
+const sliderText = document.querySelector(".slider-text");
+
+function changeSlider() {
+    sliderText.textContent = slider.value;
+} 
+
+function addSlider(num) {
+    slider.value = num;
+    sliderText.textContent = num;
+    slider.addEventListener("input", changeSlider);
+}
 
 function addColour(e) {
     e.target.style.backgroundColor = `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`
@@ -14,6 +26,7 @@ function addGrid(num) {
         canvas.appendChild(grid);
         grid.addEventListener("mouseenter", addColour)
     }
+    addSlider(num)
 }
 
 addGrid(16)
