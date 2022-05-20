@@ -9,9 +9,10 @@ body {
     justify-content: flex-start;
     align-items: center;
     background-color: black;
-    min-width: 100vw;
-    min-height: 100vh;
+    min-width: min-content;
+    min-height: min-content;
     gap: 1rem;
+    padding: 1rem;
 }
 
 h1 {
@@ -44,6 +45,8 @@ h1 {
 .main {
     display: flex;
     gap: 5rem;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .controls, .pad {   
@@ -73,7 +76,7 @@ h1 {
 }
 
 .pad {
-    width: 30rem;
+    min-width: 50vw;
     display: flex;
     flex-direction: column;
     align-items: center;
