@@ -16,11 +16,21 @@ function addSlider(num) {
 }
 
 function addColour(e) {
-    console.dir(e.target);
     if(color === "Rainbow") {
     e.target.style.backgroundColor = `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`
     }
     if(color === "Black") {
+        e.target.style.backgroundColor =  `rgb(0, 0, 0)`
+    }
+    if(color === "Shade") {
+        let opacity = e.target.style.opacity;
+        if(!opacity) {
+            e.target.style.opacity = 0;
+        }
+        if(opacity < 1) {
+            let tenPercent = 0.1 + +opacity;
+            e.target.style.opacity = tenPercent;
+        }
         e.target.style.backgroundColor =  `rgb(0, 0, 0)`
     }
 }
